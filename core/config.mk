@@ -444,6 +444,8 @@ ifneq ($(ARIS_BUILD),)
 include vendor/aris/target/board/BoardConfigAris.mk
 endif
 
+-include vendor/extra/BoardConfigExtra.mk
+
 # The build system exposes several variables for where to find the kernel
 # headers:
 #   TARGET_DEVICE_KERNEL_HEADERS is automatically created for the current
