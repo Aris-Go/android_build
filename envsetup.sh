@@ -524,6 +524,14 @@ function _lunch_meat()
     # Note this is the string "release", not the value of the variable.
     export TARGET_BUILD_TYPE=release
 
+    if (echo -n $1 | grep -q -e "^aris_") ; then
+      ARIS_BUILD=$(echo -n $product | sed -e 's/^aris_//g')
+    else
+      ARIS_BUILD=
+    fi
+    export ARIS_BUILD
+    export ARIS_DEVICE=$ARIS_BUILD
+
     [[ -n "${ANDROID_QUIET_BUILD:-}" ]] || echo
 
     set_stuff_for_environment
